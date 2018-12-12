@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GBK"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+    http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+    <!-- 定义函数版本 -->
+    <tlib-version>1.0</tlib-version>
+    <!-- 定义函数名称 -->
+    <short-name>el</short-name>
+    <!-- 定义第一个函数 -->
+    <function>
+        <!-- 定义第一个函数：reverse -->
+        <name>getImgUrl</name>
+        <!-- 定义函数处理类 -->
+        <function-class>util.El</function-class>
+        <!-- 定义函数的对应方法 -->
+        <function-signature>
+            java.lang.String getImgUrl(int)
+        </function-signature>
+    </function>
+
+    <function>
+        <!-- 定义第一个函数：reverse -->
+        <name>getCommentNumber</name>
+        <!-- 定义函数处理类 -->
+        <function-class>util.El</function-class>
+        <!-- 定义函数的对应方法 -->
+        <function-signature>
+            int getCommentsNumber(int)
+        </function-signature>
+    </function>
+
+</taglib>

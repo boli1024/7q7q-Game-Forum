@@ -1,0 +1,17 @@
+.current{
+    color: #0093ff !important;
+}
+.breadcrumb{
+    margin-left: -15px;
+    font-size: 18px;
+}
+.breadcrumb .active{
+    color: #ec095b;
+    font-weight: bold;
+}
+.from-textarea{
+    resize: none;
+}
+.noUnderline{
+    text-decoration: none;
+}

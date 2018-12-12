@@ -1,0 +1,40 @@
+#home{
+    margin-top: 70px;
+    background: url("../images/home-bg.jpg");
+    background-size: cover;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+.lvjing{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    padding: 90px 0px;
+}
+#home h1{
+    font-weight: bold;
+    font-size: 70px;
+}
+#home img{
+    margin-top: 60px;
+    display: inline-block;
+}
+
+#game{
+    padding: 80px;
+    text-align: center;
+}
+#game img{
+    margin: 0 auto;
+}
+#game h3{
+    font-weight: bold;
+}
+.btn-danger{
+    margin-right: 15px;
+}
+.btn-danger a{
+    color: white;
+    text-decoration: none;
+}

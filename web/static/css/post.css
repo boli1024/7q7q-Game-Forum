@@ -1,0 +1,12 @@
+.form-group > label{
+    font-size: 20px;
+}
+#editor{
+    height: 500px;
+}
+.btn-primary{
+    margin-top: 70px;
+}
+.edui-default .edui-editor{
+    height: 556px;
+}

@@ -1,0 +1,63 @@
+body{
+    background: #f1f1f1;
+}
+
+.panel-body .label{
+    margin-right: 30px;
+}
+.panel-body p{
+    font-size: 17px;
+}
+.list{
+    padding: 0px 10px 20px 17px;
+}
+.area-img{
+    height: 200px;
+    padding: 0px;
+}
+.area-content{
+    position: relative;
+    padding: 15px 0px 15px 0px;
+    height: 200px;
+}
+.area-content > p{
+    margin: 10px 0 10px 0px;
+    font-size: 15px;
+}
+.list-img{
+    margin:18px;
+    height: 164px;
+    width: 235px;
+}
+.list-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+    display: inline;
+}
+.glyphicon{
+    margin-right: 5px;
+}
+.footer{
+    position: absolute;
+    top: 165px;
+}
+.pagination{
+    margin-left: 28%;
+}
+.caret{
+    margin-left: 90%;
+}
+.list-group-item-heading a{
+    color: white;
+}
+.navbar-form{
+    line-height: 53px;
+}
+.form-group label{
+    margin: 0px 15px 0px 0px;
+    font-size: 18px;
+}
+.btn-default{
+    margin-top: 4px;
+}

@@ -1,0 +1,28 @@
+.reply{
+
+}
+.comment{
+    height: 100px;
+    position: relative;
+    background-color: whitesmoke;
+    margin-left: -15px;
+    padding: 5px 5px 0px 10px;
+    margin-bottom: 10px;
+}
+.comment p{
+    font-size: 17px;
+}
+.footer{
+    position: absolute;
+    top: 70px;
+}
+.content{
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+.form-horizontal .form-group{
+    margin-right: 0px;
+    font-size: 17px;
+    padding-left: 5px;
+    padding-top: 10px;
+}
