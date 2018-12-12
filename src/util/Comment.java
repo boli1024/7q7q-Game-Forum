@@ -100,13 +100,13 @@ public class Comment extends Database {
     }
 
     public static void main(String[] args) {
-        Comment c = new Comment("test","comment","root","729532969");
+        Comment c = new Comment(Config.DATABASENAME,"comment",Config.USERNAME,Config.PASSWORD);
 //        c.setRowSet();
 //        c.setDataAll();
 //        c.replyNumber(20);
 //        c.getComments(1);
 //        c.showAllData();
-        c.insert("测试回复1",3,1);
+//        c.insert("测试回复1",3,1);
         c.setRowSet();
         c.setDataAll();
         c.showAllData();

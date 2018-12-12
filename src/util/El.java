@@ -1,5 +1,7 @@
 package util;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class El {
     public static String getImgUrl(int id){
         String url = "";
@@ -16,8 +18,12 @@ public class El {
     }
 
     public static int getCommentsNumber(int id){
-        Comment comment = new Comment("test","comment","root","729532969");
+        Comment comment = new Comment(Config.DATABASENAME,"comment",Config.USERNAME,Config.PASSWORD);
         return comment.replyNumber(id);
+    }
+
+    public static String getServerPath(HttpServletRequest request){
+        return request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/";
     }
 
     public static void main(String[] args) {

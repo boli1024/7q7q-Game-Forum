@@ -10,6 +10,7 @@
 
     <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
     <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <% String serverPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/"; %>
 
 </head>
 <body>
@@ -45,7 +46,7 @@
                 <div class="form-group">
                     <div class="col-sm-10 col-sm-offset-2">
                         <button type="submit" class="btn btn-success" onclick="return beginSubmit()">注册</button>
-                        <a href="http://127.0.0.1:8080/jsp/login.jsp"><button type="button" class="btn btn-default">登录</button></a>
+                        <a href="<%=serverPath%>jsp/login.jsp"><button type="button" class="btn btn-default">登录</button></a>
                     </div>
                 </div>
                 <div class="form-group">

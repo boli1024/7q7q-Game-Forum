@@ -21,7 +21,7 @@
     </function>
 
     <function>
-        <!-- 定义第一个函数：reverse -->
+        <!-- 定义第二个函数：reverse -->
         <name>getCommentNumber</name>
         <!-- 定义函数处理类 -->
         <function-class>util.El</function-class>
@@ -31,4 +31,14 @@
         </function-signature>
     </function>
 
+    <function>
+        <!-- 定义第二个函数：reverse -->
+        <name>getServerPath</name>
+        <!-- 定义函数处理类 -->
+        <function-class>util.El</function-class>
+        <!-- 定义函数的对应方法 -->
+        <function-signature>
+            java.lang.String getServerPath(javax.servlet.http.HttpServletRequest)
+        </function-signature>
+    </function>
 </taglib>

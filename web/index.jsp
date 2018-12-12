@@ -60,25 +60,25 @@
       <div class="col-md-3">
         <img class="img-responsive img-circle" src="static/images/game/game1.jpg" alt="game-1">
         <h3>高达机器人大战</h3>
-        <button class="btn btn-danger"><a href="games/robot/game.htm" target="_blank">开始</a></button>
+        <button class="btn btn-danger" onclick="window.open('games/robot/game.htm')">开始</button>
         <button class="btn btn-success">简介</button>
       </div>
       <div class="col-md-3">
         <img class="img-responsive img-circle" src="static/images/game/game2.jpg" alt="game-2">
         <h3>益智水管工</h3>
-        <button class="btn btn-danger"><a href="games/plumber/index.htm" target="_blank">开始</a></button>
+        <button class="btn btn-danger" onclick="window.open('games/plumber/index.htm')">开始</button>
         <button class="btn btn-success">简介</button>
       </div>
       <div class="col-md-3">
         <img class="img-responsive img-circle" src="static/images/game/game3.jpg" alt="game-3">
         <h3>斗兽棋</h3>
-        <button class="btn btn-danger"><a href="games/animalChess/index.html" target="_blank">开始</a></button>
+        <button class="btn btn-danger" onclick="window.open('games/animalChess/index.html')">开始</button>
         <button class="btn btn-success">简介</button>
       </div>
       <div class="col-md-3">
         <img class="img-responsive img-circle" src="static/images/game/game4.jpg" alt="game-4" style="height: 262px">
         <h3>堆木头</h3>
-        <button class="btn btn-danger"><a href="games/wood/index.html" target="_blank">开始</a></button>
+        <button class="btn btn-danger" onclick="window.open('games/wood/index.html')">开始</button>
         <button class="btn btn-success">简介</button>
       </div>
     </div>

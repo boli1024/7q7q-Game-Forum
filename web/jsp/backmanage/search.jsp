@@ -12,6 +12,7 @@
 
     <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
     <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <% String serverPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/"; %>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -98,8 +99,8 @@
                                 操作<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="http://127.0.0.1:8080/userUpdate?id=${row[0]}">修改信息</a></li>
-                                <li><a href="http://127.0.0.1:8080/userDelete?id=${row[0]}">删除用户</a></li>
+                                <li><a href="<%=serverPath%>userUpdate?id=${row[0]}">修改信息</a></li>
+                                <li><a href="<%=serverPath%>userDelete?id=${row[0]}">删除用户</a></li>
                             </ul>
                         </div>
                     </td>

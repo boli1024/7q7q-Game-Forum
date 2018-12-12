@@ -138,7 +138,7 @@ public class User extends Database{
     }
 
     public static void main(String[] args) {
-        User u = new User("test","user","root","729532969");
+        User u = new User(Config.DATABASENAME,"user",Config.USERNAME,Config.PASSWORD);
 //        u.insert("test3","test3@qq.com","test3","insert test3");
 //        u.update(8,"test2","test2@qq.com","test2","insert test2 ,update test");
 //        u.delete(9);

@@ -335,7 +335,7 @@ public class Database {
 
 
     public static void main(String[] args) {
-        Database db = new Database("test","user","root","729532969");
+        Database db = new Database(Config.DATABASENAME,"user",Config.USERNAME,Config.PASSWORD);
 //        db.showData();
         db.setRowSet();
         db.setDataAll();

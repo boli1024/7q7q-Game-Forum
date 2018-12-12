@@ -26,8 +26,8 @@ public class UpdateHandle extends HttpServlet {
         try{
             int id = Integer.parseInt(request.getParameter("ID").trim());
             String username = request.getParameter("username").trim();
-            String password = request.getParameter("password").trim();
             String email = request.getParameter("email").trim();
+            String password = request.getParameter("password").trim();
             String introduction = request.getParameter("introduction").trim();
 
             User user = Tools.getUser(request);

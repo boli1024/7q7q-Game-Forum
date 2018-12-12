@@ -12,6 +12,7 @@
 
     <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
     <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <% String serverPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/"; %>
 
 </head>
 <body>
@@ -23,8 +24,8 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://127.0.0.1:8080">首页</a></li>
-                <li><a href="http://127.0.0.1:8080/index.jsp#game">游戏</a></li>
+                <li><a href="<%=serverPath%>">首页</a></li>
+                <li><a href="<%=serverPath%>index.jsp#game">游戏</a></li>
                 <li><a>简介</a></li>
                 <li><a class="/postDetail">论坛</a></li>
 
@@ -33,8 +34,8 @@
                     <li><a href="/logout">注销</a></li>
                 </c:if>
                 <c:if test="${!loginResult.getBoolResult()}">
-                    <li><a href="http://127.0.0.1:8080/jsp/login.jsp">登录</a></li>
-                    <li><a href="http://127.0.0.1:8080/jsp/register.jsp">注册</a></li>
+                    <li><a href="<%=serverPath%>jsp/login.jsp">登录</a></li>
+                    <li><a href="<%=serverPath%>jsp/register.jsp">注册</a></li>
                 </c:if>
 
             </ul>

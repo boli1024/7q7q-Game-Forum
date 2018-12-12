@@ -28,7 +28,7 @@ public class Tools {
         if((user = (User)session.getAttribute("user")) != null){
             return user;
         }
-        user = new User("test","user","root","729532969");
+        user = new User(Config.DATABASENAME,"user",Config.USERNAME,Config.PASSWORD);
         session.setAttribute("user",user);
         return user;
     }
@@ -39,7 +39,7 @@ public class Tools {
         if((post = (Post)session.getAttribute("post")) != null){
             return post;
         }
-        post = new Post("test","post","root","729532969");
+        post = new Post(Config.DATABASENAME,"post",Config.USERNAME,Config.PASSWORD);
         session.setAttribute("post",post);
         return post;
     }
@@ -50,7 +50,7 @@ public class Tools {
         if((comment = (Comment)session.getAttribute("comment")) != null){
             return comment;
         }
-        comment = new Comment("test","comment","root","729532969");
+        comment = new Comment(Config.DATABASENAME,"comment",Config.USERNAME,Config.PASSWORD);
         session.setAttribute("comment",comment);
         return comment;
     }

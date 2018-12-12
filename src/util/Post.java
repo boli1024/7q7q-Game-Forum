@@ -155,7 +155,7 @@ public class Post extends Database {
     }
 
     public static void main(String[] args) {
-        Post post = new Post("test","post","root","729532969");
+        Post post = new Post(Config.DATABASENAME,"post",Config.USERNAME,Config.PASSWORD);
 //        post.query("id",1);
 //        post.showSingleData();
 //        post.insert("6号帖子","6号帖子总结","6号帖子内容",1,1);

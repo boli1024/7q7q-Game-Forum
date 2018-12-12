@@ -12,6 +12,7 @@
 
     <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
     <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <% String serverPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/"; %>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -75,8 +76,8 @@
                                 操作<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="http://127.0.0.1:8080/userUpdate?id=${row[0]}">修改信息</a></li>
-                                <li><a href="http://127.0.0.1:8080/userDelete?id=${row[0]}">删除用户</a></li>
+                                <li><a href="<%=serverPath%>userUpdate?id=${row[0]}">修改信息</a></li>
+                                <li><a href="<%=serverPath%>userDelete?id=${row[0]}">删除用户</a></li>
                             </ul>
                         </div>
                     </td>
@@ -100,16 +101,16 @@
             </div>
         </c:if>
         <ul class="pagination pagination-lg">
-            <li><a href="http://127.0.0.1:8080/userAll?page=${currentUserPage - 1}">&laquo;</a></li>
+            <li><a href="<%=serverPath%>userAll?page=${currentUserPage - 1}">&laquo;</a></li>
             <c:forEach var="page" begin="1" end="${user.getPageNumberMax()}">
                 <c:if test="${page == currentUserPage}">
-                    <li class="active"><a href="http://127.0.0.1:8080/userAll?page=${page}">${page}</a></li>
+                    <li class="active"><a href="<%=serverPath%>userAll?page=${page}">${page}</a></li>
                 </c:if>
                 <c:if test="${page != currentUserPage}">
-                    <li><a href="http://127.0.0.1:8080/userAll?page=${page}">${page}</a></li>
+                    <li><a href="<%=serverPath%>userAll?page=${page}">${page}</a></li>
                 </c:if>
             </c:forEach>
-            <li><a href="http://127.0.0.1:8080/userAll?page=${currentUserPage + 1}">&raquo;</a></li>
+            <li><a href="<%=serverPath%>userAll?page=${currentUserPage + 1}">&raquo;</a></li>
         </ul>
     </div>
 </div>
