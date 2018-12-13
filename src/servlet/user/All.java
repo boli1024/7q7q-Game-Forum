@@ -43,7 +43,7 @@ public class All extends HttpServlet {
         HttpSession session = request.getSession(true);
         session.setAttribute("currentUserPage",page);
 
-        response.sendRedirect("jsp/backmanage/all.jsp");
+        response.sendRedirect("jsp/backmanage/user/all.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{

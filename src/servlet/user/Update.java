@@ -43,7 +43,7 @@ public class Update extends HttpServlet {
         }
 
         request.setAttribute("updateResult",updateResult);
-        request.getRequestDispatcher("jsp/backmanage/update.jsp").forward(request,response);
+        request.getRequestDispatcher("jsp/backmanage/user/update.jsp").forward(request,response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{

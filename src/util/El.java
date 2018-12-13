@@ -22,10 +22,6 @@ public class El {
         return comment.replyNumber(id);
     }
 
-    public static String getServerPath(HttpServletRequest request){
-        return request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/";
-    }
-
     public static void main(String[] args) {
         System.out.println(El.getCommentsNumber(10));
     }

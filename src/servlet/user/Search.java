@@ -37,7 +37,7 @@ public class Search extends HttpServlet {
         else {
             user.query(column,data);
         }
-        response.sendRedirect("jsp/backmanage/search.jsp");
+        response.sendRedirect("jsp/backmanage/user/search.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {

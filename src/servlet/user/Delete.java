@@ -49,7 +49,7 @@ public class Delete extends HttpServlet {
         }
 
         request.setAttribute("deleteResult",deleteResult);
-        request.getRequestDispatcher("jsp/backmanage/all.jsp").forward(request,response);
+        request.getRequestDispatcher("jsp/backmanage/user/all.jsp").forward(request,response);
 
     }
 

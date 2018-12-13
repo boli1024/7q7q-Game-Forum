@@ -38,7 +38,7 @@ public class UpdateHandle extends HttpServlet {
         }
 
         request.setAttribute("updateHandleResult",updateHandleResult);
-        request.getRequestDispatcher("/jsp/backmanage/search.jsp").forward(request,response);
+        request.getRequestDispatcher("/jsp/backmanage/user/search.jsp").forward(request,response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{

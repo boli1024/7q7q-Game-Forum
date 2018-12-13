@@ -145,4 +145,13 @@
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>postAll</servlet-name>
+        <servlet-class>servlet.post.All</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>postAll</servlet-name>
+        <url-pattern>/postAll</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
-    <link rel="icon" type="image/x-icon" href="../../static/images/game-icon.jpg">
+    <link rel="icon" type="image/x-icon" href="../../../static/images/game-icon.jpg">
     <title>后台管理页面</title>
-    <link rel="stylesheet" href="../../static/css/bootstrap.css" />
-    <link rel="stylesheet" href="../../static/css/backmanage.css">
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../../static/css/backmanage.css">
+    <link rel="stylesheet" href="../../../static/css/style.css">
 
     <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
     <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <% String serverPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/"; %>
+
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -36,20 +37,12 @@
     </div>
 </nav>
 <div class="container">
-    <div class="col-md-2">
-        <div class="list-group">
-            <a class="list-group-item active" href="">普通用户</a>
-            <a class="list-group-item" href="">协管员</a>
-            <a class="list-group-item" href="">审核员</a>
-            <a class="list-group-item" href="">管理员</a>
-        </div>
-    </div>
-    <div class="col-md-10">
+    <div class="col-md-12">
         <div class="page-header">用户管理</div>
         <ul class="nav nav-tabs">
             <li><a href="/userAll">用户列表</a></li>
             <li class="active"><a>用户搜索</a></li>
-            <li><a href="add.jsp">用户添加</a></li>
+            <li><a href="<%=serverPath%>jsp/backmanage/user/add.jsp">用户添加</a></li>
         </ul>
         <form action="/userSearch" method="get" class="form-horizontal" role="form" style="padding: 40px 0 0 0">
             <div class="form-group">
@@ -117,6 +110,6 @@
     </div>
 </div>
 </body>
-<script src="../../static/js/jquery-3.3.1.min.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../../../static/js/jquery-3.3.1.min.js"></script>
+<script src="../../../static/js/bootstrap.min.js"></script>
 </html>

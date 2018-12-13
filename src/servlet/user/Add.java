@@ -30,7 +30,7 @@ public class Add extends HttpServlet {
         Result addResult = new Result(result);
         request.setAttribute("addResult",addResult);
 
-        request.getRequestDispatcher("/jsp/backmanage/add.jsp").forward(request,response);
+        request.getRequestDispatcher("/jsp/backmanage/user/add.jsp").forward(request,response);
 
     }
 

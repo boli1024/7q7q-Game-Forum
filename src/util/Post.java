@@ -29,6 +29,26 @@ public class Post extends Database {
         setColumnData();
     }
 
+    public void setAllPost(){
+        try {
+            rowSet = new CachedRowSetImpl();
+            connect();
+            PreparedStatement pre = con.prepareStatement("select post.id,post.title,user.username,lable.lable,post.createTime from post,user,lable" +
+                    " where post.userId=user.id and post.lableId=lable.id order by post.id asc;");
+            ResultSet resultSet = pre.executeQuery();
+            rowSet.populate(resultSet);
+            setData(rowSet,data,5);
+            System.out.println("后台所有帖子查询成功");
+        }
+        catch (Exception e){
+            System.out.println(e);
+            System.out.println("后台所有帖子查询失败");
+        }
+        finally {
+            closeConnect();
+        }
+    }
+
     public boolean insert(String title,String summary,String content, int userId,int lableId){
         int result;
         try {
@@ -164,7 +184,8 @@ public class Post extends Database {
         post.setRowSet();
 //        post.setDataAll();
 //        post.getDetailData();
-        post.getDetailDataByLike("测");
+//        post.getDetailDataByLike("测");
+        post.setAllPost();
         post.showAllData();
 //        post.getContent(1);
 //        post.showSingleData();
