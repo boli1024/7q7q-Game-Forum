@@ -30,7 +30,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="" class="current">用户管理</a></li>
                 <li><a href="">游戏简介管理</a></li>
-                <li><a href="">帖子管理</a></li>
+                <li><a href="/postAll">帖子管理</a></li>
                 <li><a href="">评论管理</a></li>
             </ul>
         </div>

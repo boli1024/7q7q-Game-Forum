@@ -154,4 +154,13 @@
         <servlet-name>postAll</servlet-name>
         <url-pattern>/postAll</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>postDelete</servlet-name>
+        <servlet-class>servlet.post.Delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>postDelete</servlet-name>
+        <url-pattern>/postDelete</url-pattern>
+    </servlet-mapping>
 </web-app>

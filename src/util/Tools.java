@@ -55,6 +55,27 @@ public class Tools {
         return comment;
     }
 
+    public static int getPage(HttpServletRequest request){
+        int page = 1;
+        try {
+            page = Integer.parseInt(request.getParameter("page"));
+        }
+        catch (Exception e){
+            page = 1;
+        }
+        return page;
+    }
+
+    public static int valiPostPage(int page,Post post){
+        if(page > post.getPageNumberMax()){
+            page = 1;
+        }
+        if(page <= 0){
+            page = post.getPageNumberMax();
+        }
+        return page;
+    }
+
     public static String getCurrentTime(){
         /*获得当前时间
         * 格式为：2018-11-27 15:47:20

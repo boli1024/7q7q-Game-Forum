@@ -69,8 +69,8 @@
                                 操作<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="<%=serverPath%>postUpdate?id=${row[0]}">修改信息</a></li>
-                                <li><a href="<%=serverPath%>postDelete?id=${row[0]}">删除用户</a></li>
+                                <li><a href="<%=serverPath%>postUpdate?id=${row[0]}">修改帖子</a></li>
+                                <li><a href="<%=serverPath%>postDelete?id=${row[0]}">删除帖子</a></li>
                             </ul>
                         </div>
                     </td>
@@ -78,32 +78,32 @@
             </c:forEach>
             </tbody>
         </table>
-        <c:if test="${deleteResult.getBoolResult()}">
-            <div class="alert alert-success">数据删除成功</div>
+        <c:if test="${deletePostResult.getBoolResult()}">
+            <div class="alert alert-success">帖子删除成功</div>
             <div class="alert alert-info">
-                <a class="alert-link" href="/userAll">刷新用户列表</a>
+                <a class="alert-link" href="/postAll">刷新帖子列表</a>
             </div>
         </c:if>
-        <c:if test="${deleteResult.getBoolResult() != null && !deleteResult.getBoolResult()}">
-            <div class="alert alert-danger">数据删除失败</div>
-            <c:if test="${deleteResult.getStringResult() != null}">
-                <div class="alert alert-danger">${deleteResult.getStringResult()}</div>
+        <c:if test="${deletePostResult.getBoolResult() != null && !deletePostResult.getBoolResult()}">
+            <div class="alert alert-danger">帖子删除失败</div>
+            <c:if test="${deletePostResult.getStringResult() != null}">
+                <div class="alert alert-danger">${deletePostResult.getStringResult()}</div>
             </c:if>
             <div class="alert alert-info">
-                <a class="alert-link" href="/userAll">刷新用户列表</a>
+                <a class="alert-link" href="/postAll">刷新帖子列表</a>
             </div>
         </c:if>
         <ul class="pagination pagination-lg">
-            <li><a href="<%=serverPath%>userAll?page=${currentUserPage - 1}">&laquo;</a></li>
-            <c:forEach var="page" begin="1" end="${user.getPageNumberMax()}">
-                <c:if test="${page == currentUserPage}">
-                    <li class="active"><a href="<%=serverPath%>userAll?page=${page}">${page}</a></li>
+            <li><a href="<%=serverPath%>postAll?page=${currentPostPage - 1}">&laquo;</a></li>
+            <c:forEach var="page" begin="1" end="${post.getPageNumberMax()}">
+                <c:if test="${page == currentPostPage}">
+                    <li class="active"><a href="<%=serverPath%>postAll?page=${page}">${page}</a></li>
                 </c:if>
-                <c:if test="${page != currentUserPage}">
-                    <li><a href="<%=serverPath%>userAll?page=${page}">${page}</a></li>
+                <c:if test="${page != currentPostPage}">
+                    <li><a href="<%=serverPath%>postAll?page=${page}">${page}</a></li>
                 </c:if>
             </c:forEach>
-            <li><a href="<%=serverPath%>userAll?page=${currentUserPage + 1}">&raquo;</a></li>
+            <li><a href="<%=serverPath%>postAll?page=${currentPostPage + 1}">&raquo;</a></li>
         </ul>
     </div>
 </div>

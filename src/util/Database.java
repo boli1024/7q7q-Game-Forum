@@ -308,10 +308,10 @@ public class Database {
     }
 
     public boolean delete(int id){
-        int result;
+        int result = 0;
         try{
             connect();
-            PreparedStatement pre = con.prepareStatement("delete from "+tableName+" where id = ?");
+            PreparedStatement pre = con.prepareStatement("delete from "+tableName+" where id = ? ");
             pre.setInt(1,id);
             result = pre.executeUpdate();
             if(result == 1){

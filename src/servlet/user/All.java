@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.tools.Tool;
 import java.io.IOException;
 
 public class All extends HttpServlet {
@@ -20,13 +21,7 @@ public class All extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
         request.setCharacterEncoding("utf-8");
 
-        int page = 1;
-        try {
-            page = Integer.parseInt(request.getParameter("page"));
-        }
-        catch (Exception e){
-            page = 1;
-        }
+        int page = Tools.getPage(request);
 
         User user = Tools.getUser(request);
         user.setRowSet();
