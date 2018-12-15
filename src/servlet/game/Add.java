@@ -3,7 +3,6 @@ package servlet.game;
 import bean.Result;
 import util.Game;
 import util.Tools;
-import util.User;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
