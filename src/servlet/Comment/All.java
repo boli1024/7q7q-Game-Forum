@@ -1,8 +1,10 @@
-package servlet.post;
+package servlet.Comment;
 
-import util.Post;
+import util.Comment;
+import util.Game;
 import util.Tools;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,8 +15,8 @@ import java.io.IOException;
 public class All extends HttpServlet {
 
     @Override
-    public void init() throws ServletException {
-        super.init();
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -22,18 +24,18 @@ public class All extends HttpServlet {
 
         int page = Tools.getPage(request);
 
-        Post post = Tools.getPost(request);
-        post.setRowSet();
+        Comment comment = Tools.getComment(request);
 
-        page = Tools.validatePage(page,post);
-        post.setAllPost();
+        comment.setRowSet();
+        comment.setDataAll();
 
-        post.getPageData(page,5);
+        page = Tools.validatePage(page,comment);
+        comment.getPageData(page,5);
 
         HttpSession session = request.getSession(true);
-        session.setAttribute("currentPostPage",page);
+        session.setAttribute("currentCommentPage",page);
 
-        response.sendRedirect("jsp/backmanage/post/all.jsp");
+        response.sendRedirect("jsp/backmanage/comment/all.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

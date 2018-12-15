@@ -40,16 +40,16 @@ public class Comment extends Database {
             pre.setInt(4,postId);
             result = pre.executeUpdate();
             if(result == 1){
-                System.out.println("插入 comment 数据成功");
+                System.out.println("插入 Comment 数据成功");
                 return true;
             }
             else {
-                System.out.println("插入 comment 数据失败");
+                System.out.println("插入 Comment 数据失败");
                 return false;
             }
         }
         catch (Exception e){
-            System.out.println("插入 comment 数据失败");
+            System.out.println("插入 Comment 数据失败");
             System.out.println(e);
             return false;
         }
@@ -100,7 +100,7 @@ public class Comment extends Database {
     }
 
     public static void main(String[] args) {
-        Comment c = new Comment(Config.DATABASENAME,"comment",Config.USERNAME,Config.PASSWORD);
+        Comment c = new Comment(Config.DATABASENAME,"Comment",Config.USERNAME,Config.PASSWORD);
 //        c.setRowSet();
 //        c.setDataAll();
 //        c.replyNumber(20);

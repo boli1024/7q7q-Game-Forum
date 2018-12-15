@@ -8707,7 +8707,7 @@ var filterWord = UE.filterWord = function () {
             case 'element':
                 isElement(node, arr, formatter, current);
                 break;
-            case 'comment':
+            case 'Comment':
                 isComment(node, arr, formatter);
         }
         return arr;
@@ -9485,7 +9485,7 @@ var htmlparser = UE.htmlparser = function (htmlstr,ignoreBlank) {
 
     function comment(parent, data) {
         parent.children.push(new uNode({
-            type:'comment',
+            type:'Comment',
             data:data,
             parentNode:parent
         }));
@@ -9536,7 +9536,7 @@ var htmlparser = UE.htmlparser = function (htmlstr,ignoreBlank) {
                 }
 
             } else if (match[2]) {
-                //comment
+                //Comment
                 comment(currentParent, match[2])
             }
         }catch(e){}
@@ -9660,7 +9660,7 @@ var filterNode = UE.filterNode = function () {
                     }
                 }
                 break;
-            case 'comment':
+            case 'Comment':
                 node.parentNode.removeChild(node)
         }
 
@@ -10128,7 +10128,7 @@ UE.plugins['defaultfilter'] = function () {
                 }
 
             }
-//            if(node.type == 'comment'){
+//            if(node.type == 'Comment'){
 //                node.parentNode.removeChild(node);
 //            }
         })

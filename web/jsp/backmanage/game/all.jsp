@@ -29,8 +29,8 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/userAll">用户管理</a></li>
-                <li><a href="/gameAll">游戏简介管理</a></li>
-                <li><a class="current">帖子管理</a></li>
+                <li><a href="" class="current">游戏简介管理</a></li>
+                <li><a href="/postAll">帖子管理</a></li>
                 <li><a href="/commentAll">评论管理</a></li>
             </ul>
         </div>
@@ -38,23 +38,23 @@
 </nav>
 <div class="container">
     <div class="col-md-12">
-        <div class="page-header">帖子管理</div>
+        <div class="page-header">游戏简介管理</div>
         <ul class="nav nav-tabs">
-            <li class="active"><a href="">帖子列表</a></li>
+            <li class="active"><a href="">游戏列表</a></li>
         </ul>
         <table class="table">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>标题</th>
-                <th>发表用户</th>
-                <th>标签</th>
-                <th>发表时间</th>
+                <th>游戏名称</th>
+                <th>游戏简介</th>
+                <th>录入时间</th>
+                <th>来源</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${post.getData()}" var="row">
+            <c:forEach items="${game.getData()}" var="row">
                 <tr>
                     <th scope="row">${row[0]}</th>
                     <td>${row[1]}</td>
@@ -67,8 +67,8 @@
                                 操作<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="<%=serverPath%>postUpdate?id=${row[0]}">修改帖子</a></li>
-                                <li><a href="<%=serverPath%>postDelete?id=${row[0]}">删除帖子</a></li>
+                                <li><a href="<%=serverPath%>gameUpdate?id=${row[0]}">修改简介</a></li>
+                                <li><a href="<%=serverPath%>gameDelete?id=${row[0]}">删除帖子</a></li>
                             </ul>
                         </div>
                     </td>
@@ -76,32 +76,32 @@
             </c:forEach>
             </tbody>
         </table>
-        <c:if test="${deletePostResult.getBoolResult()}">
-            <div class="alert alert-success">帖子删除成功</div>
+        <c:if test="${deleteGameResult.getBoolResult()}">
+            <div class="alert alert-success">游戏简介删除成功</div>
             <div class="alert alert-info">
-                <a class="alert-link" href="/postAll">刷新帖子列表</a>
+                <a class="alert-link" href="/gameAll">刷新游戏简介列表</a>
             </div>
         </c:if>
-        <c:if test="${deletePostResult.getBoolResult() != null && !deletePostResult.getBoolResult()}">
-            <div class="alert alert-danger">帖子删除失败</div>
-            <c:if test="${deletePostResult.getStringResult() != null}">
-                <div class="alert alert-danger">${deletePostResult.getStringResult()}</div>
+        <c:if test="${deleteGameResult.getBoolResult() != null && !deleteGameResult.getBoolResult()}">
+            <div class="alert alert-danger">游戏简介删除失败</div>
+            <c:if test="${deleteGameResult.getStringResult() != null}">
+                <div class="alert alert-danger">${deleteGameResult.getStringResult()}</div>
             </c:if>
             <div class="alert alert-info">
-                <a class="alert-link" href="/postAll">刷新帖子列表</a>
+                <a class="alert-link" href="/gameAll">刷新游戏简介列表</a>
             </div>
         </c:if>
         <ul class="pagination pagination-lg">
-            <li><a href="<%=serverPath%>postAll?page=${currentPostPage - 1}">&laquo;</a></li>
-            <c:forEach var="page" begin="1" end="${post.getPageNumberMax()}">
-                <c:if test="${page == currentPostPage}">
-                    <li class="active"><a href="<%=serverPath%>postAll?page=${page}">${page}</a></li>
+            <li><a href="<%=serverPath%>gameAll?page=${currentGamePage - 1}">&laquo;</a></li>
+            <c:forEach var="page" begin="1" end="${game.getPageNumberMax()}">
+                <c:if test="${page == currentGamePage}">
+                    <li class="active"><a href="<%=serverPath%>gameAll?page=${page}">${page}</a></li>
                 </c:if>
-                <c:if test="${page != currentPostPage}">
-                    <li><a href="<%=serverPath%>postAll?page=${page}">${page}</a></li>
+                <c:if test="${page != currentGamePage}">
+                    <li><a href="<%=serverPath%>gameAll?page=${page}">${page}</a></li>
                 </c:if>
             </c:forEach>
-            <li><a href="<%=serverPath%>postAll?page=${currentPostPage + 1}">&raquo;</a></li>
+            <li><a href="<%=serverPath%>gameAll?page=${currentGamePage + 1}">&raquo;</a></li>
         </ul>
     </div>
 </div>

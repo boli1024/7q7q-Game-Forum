@@ -3,7 +3,6 @@ package servlet.post;
 import bean.Result;
 import util.Post;
 import util.Tools;
-import util.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -2785,7 +2785,7 @@ CodeMirror.defineMode("xml", function(config, parserConfig) {
                     if (stream.match("CDATA[")) return chain(inBlock("atom", "]]>"));
                     else return null;
                 }
-                else if (stream.match("--")) return chain(inBlock("comment", "-->"));
+                else if (stream.match("--")) return chain(inBlock("Comment", "-->"));
                 else if (stream.match("DOCTYPE", true, true)) {
                     stream.eatWhile(/[\w\._\-]/);
                     return chain(doctype(1));
@@ -2972,7 +2972,7 @@ CodeMirror.defineMode("xml", function(config, parserConfig) {
             setStyle = type = tagName = null;
             var style = state.tokenize(stream, state);
             state.type = type;
-            if ((style || type) && style != "comment") {
+            if ((style || type) && style != "Comment") {
                 curState = state;
                 while (true) {
                     var comb = state.cc.pop() || element;
@@ -3077,7 +3077,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
             }
             else if (stream.eat("/")) {
                 stream.skipToEnd();
-                return ret("comment", "comment");
+                return ret("Comment", "Comment");
             }
             else if (state.reAllowed) {
                 nextUntilUnescaped(stream, "/");
@@ -3122,7 +3122,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
             }
             maybeEnd = (ch == "*");
         }
-        return ret("comment", "comment");
+        return ret("Comment", "Comment");
     }
 
     // Parser
@@ -3346,7 +3346,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
             }
             if (stream.eatSpace()) return null;
             var style = state.tokenize(stream, state);
-            if (type == "comment") return style;
+            if (type == "Comment") return style;
             state.reAllowed = type == "operator" || type == "keyword c" || type.match(/^[\[{}\(,;:]$/);
             state.kwAllowed = type != '.';
             return parseJS(state, style, type, content, stream);
@@ -3426,7 +3426,7 @@ CodeMirror.defineMode("css", function(config) {
             }
             maybeEnd = (ch == "*");
         }
-        return ret("comment", "comment");
+        return ret("Comment", "Comment");
     }
 
     function tokenSGMLComment(stream, state) {
@@ -3438,7 +3438,7 @@ CodeMirror.defineMode("css", function(config) {
             }
             dashes = (ch == "-") ? dashes + 1 : 0;
         }
-        return ret("comment", "comment");
+        return ret("Comment", "Comment");
     }
 
     function tokenString(quote) {
@@ -3480,7 +3480,7 @@ CodeMirror.defineMode("css", function(config) {
             }
             else if (type == "}") state.stack.pop();
             else if (type == "@media") state.stack.push("@media");
-            else if (context == "{" && type != "comment") state.stack.push("rule");
+            else if (context == "{" && type != "Comment") state.stack.push("rule");
             return style;
         },
 

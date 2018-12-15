@@ -18,7 +18,7 @@ public class El {
     }
 
     public static int getCommentsNumber(int id){
-        Comment comment = new Comment(Config.DATABASENAME,"comment",Config.USERNAME,Config.PASSWORD);
+        Comment comment = new Comment(Config.DATABASENAME,"Comment",Config.USERNAME,Config.PASSWORD);
         return comment.replyNumber(id);
     }
 

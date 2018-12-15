@@ -163,4 +163,31 @@
         <servlet-name>postDelete</servlet-name>
         <url-pattern>/postDelete</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>gameAll</servlet-name>
+        <servlet-class>servlet.game.All</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>gameAll</servlet-name>
+        <url-pattern>/gameAll</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>gameDelete</servlet-name>
+        <servlet-class>servlet.game.Delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>gameDelete</servlet-name>
+        <url-pattern>/gameDelete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>commentAll</servlet-name>
+        <servlet-class>servlet.Comment.All</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>commentAll</servlet-name>
+        <url-pattern>/commentAll</url-pattern>
+    </servlet-mapping>
 </web-app>

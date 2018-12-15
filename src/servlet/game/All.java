@@ -1,6 +1,6 @@
-package servlet.post;
+package servlet.game;
 
-import util.Post;
+import util.Game;
 import util.Tools;
 
 import javax.servlet.ServletException;
@@ -22,18 +22,18 @@ public class All extends HttpServlet {
 
         int page = Tools.getPage(request);
 
-        Post post = Tools.getPost(request);
-        post.setRowSet();
+        Game game = Tools.getGame(request);
+        game.setRowSet();
 
-        page = Tools.validatePage(page,post);
-        post.setAllPost();
+        page = Tools.validatePage(page,game);
+        game.setDataAll();
 
-        post.getPageData(page,5);
+        game.getPageData(page,5);
 
         HttpSession session = request.getSession(true);
-        session.setAttribute("currentPostPage",page);
+        session.setAttribute("currentGamePage",page);
 
-        response.sendRedirect("jsp/backmanage/post/all.jsp");
+        response.sendRedirect("jsp/backmanage/game/all.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

@@ -20,7 +20,7 @@ public class Add extends HttpServlet {
         super.init(config);
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setCharacterEncoding("utf-8");
 
         Result result = new Result();
@@ -90,7 +90,7 @@ public class Add extends HttpServlet {
         }
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-        doGet(request,response);
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        doGet(request, response);
     }
 }

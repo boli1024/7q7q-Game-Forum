@@ -47,12 +47,23 @@ public class Tools {
     public static Comment getComment(HttpServletRequest request){
         HttpSession session = request.getSession(true);
         Comment comment;
-        if((comment = (Comment)session.getAttribute("comment")) != null){
+        if((comment = (Comment)session.getAttribute("Comment")) != null){
             return comment;
         }
-        comment = new Comment(Config.DATABASENAME,"comment",Config.USERNAME,Config.PASSWORD);
+        comment = new Comment(Config.DATABASENAME,"Comment",Config.USERNAME,Config.PASSWORD);
         session.setAttribute("comment",comment);
         return comment;
+    }
+
+    public static Game getGame(HttpServletRequest request){
+        HttpSession session = request.getSession(true);
+        Game game;
+        if((game = (Game)session.getAttribute("game")) != null){
+            return game;
+        }
+        game = new Game(Config.DATABASENAME, "game", Config.USERNAME, Config.PASSWORD);
+        session.setAttribute("game", game);
+        return game;
     }
 
     public static int getPage(HttpServletRequest request){
@@ -66,12 +77,12 @@ public class Tools {
         return page;
     }
 
-    public static int valiPostPage(int page,Post post){
-        if(page > post.getPageNumberMax()){
+    public static int validatePage(int page,Database object){
+        if(page > object.getPageNumberMax()){
             page = 1;
         }
         if(page <= 0){
-            page = post.getPageNumberMax();
+            page = object.getPageNumberMax();
         }
         return page;
     }
