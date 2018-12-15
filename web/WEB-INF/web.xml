@@ -190,4 +190,13 @@
         <servlet-name>commentAll</servlet-name>
         <url-pattern>/commentAll</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>gameAdd</servlet-name>
+        <servlet-class>servlet.game.Add</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>gameAdd</servlet-name>
+        <url-pattern>/gameAdd</url-pattern>
+    </servlet-mapping>
 </web-app>

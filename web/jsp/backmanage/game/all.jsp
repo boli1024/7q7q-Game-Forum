@@ -41,6 +41,7 @@
         <div class="page-header">游戏简介管理</div>
         <ul class="nav nav-tabs">
             <li class="active"><a href="">游戏列表</a></li>
+            <li><a href="<%=serverPath%>/jsp/backmanage/game/add.jsp">游戏添加</a></li>
         </ul>
         <table class="table">
             <thead>
