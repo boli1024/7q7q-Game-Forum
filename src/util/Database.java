@@ -37,6 +37,7 @@ public class Database {
     }
 
     public String connect(){
+//        连接数据库
         String tip;
 
         try{
@@ -58,6 +59,7 @@ public class Database {
     }
 
     public void closeConnect(){
+//        关闭数据库连接
         try {
             con.close();
             System.out.println("连接关闭成功");
@@ -72,6 +74,7 @@ public class Database {
     }
 
     public void setColumnData(){
+//        设置数据库列信息
         try {
             connect();
             DatabaseMetaData metaData = con.getMetaData();
@@ -93,6 +96,7 @@ public class Database {
     }
 
     public void setRowSet(){
+//        获取数据库的全部信息，用于设置数据库总行数、分页的总页数
         try{
             connect();
             rowSet = new CachedRowSetImpl();
@@ -116,22 +120,27 @@ public class Database {
     }
 
     public void setPageNumberMax(){
+//        计算总页数
         pageNumberMax = rowNumber % pageSize > 0 ? rowNumber / pageSize + 1 : rowNumber / pageSize;
     }
 
     public void setDataAll(){
+//        将数据库信息添加到 data 对象中
         setData(rowSet);
     }
 
     public void setData(CachedRowSetImpl rowSet){
+//        指定数据集，将信息添加到 data 对象中
         setData(rowSet,data,columnNumber);
     }
 
     public void setData(CachedRowSetImpl rowSet, ArrayList<ArrayList<String>> data){
+//        指定数据集、列表嵌套的 data 对象，将信息添加到 data 对象中，主要用于设置 singleData
         setData(rowSet,data,columnNumber);
     }
 
     public void setData(CachedRowSetImpl rowSet, ArrayList<ArrayList<String>> data,int columnNumber){
+//        指定数据集、列表嵌套的 data 对象、数据集列数，将信息添加到 data 对象中，用于保存查询后的结果集
         /*
         * 给定缓冲对象rowSet，数据保存对象data，和列数columnNumber，将数据缓冲对象的columnNumber列保存到data中，
         * 列数作为参数的原因是，有的表中经过查询后的结果集的列数不一定为原表列数，故为防止异常，增加列数字段
@@ -190,6 +199,7 @@ public class Database {
     }
 
     public void showData(ArrayList<ArrayList<String>> data){
+//        在控制台显示指定数据集 data 中的数据
         for (int count=0;count < columnNames.size();count++){
             System.out.print(columnNames.get(count) + "   ");
         }
@@ -207,10 +217,12 @@ public class Database {
     }
 
     public void showAllData(){
+//        显示 data 的数据
         showData(data);
     }
 
     public void showSingleData(){
+//        显示 singleData 的数据
         showData(singleData);
     }
 
@@ -223,7 +235,7 @@ public class Database {
     }
 
     public void getPageData(int page){
-
+//      设置分页信息，参数为第几页
         if(page > pageNumberMax){
             page = 1;
         }
@@ -241,6 +253,7 @@ public class Database {
     }
 
     public void getPageData(int page,int columnNumber){
+//        设置分页数据，参数为页数、列数
         if(page > pageNumberMax){
             page = 1;
         }
@@ -265,6 +278,7 @@ public class Database {
     }
 
     public boolean query(String column, Object value){
+//        查询，参数为：列名，列名对应的值
         try {
             connect();
             PreparedStatement pre = con.prepareStatement("select * from " + tableName + " where "+column+" = ?");
@@ -308,6 +322,7 @@ public class Database {
     }
 
     public boolean delete(int id){
+//        删除，参数为：数据库字段的 id
         int result = 0;
         try{
             connect();
